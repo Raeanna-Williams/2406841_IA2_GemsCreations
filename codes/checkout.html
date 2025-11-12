@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- IA#2: Metadata and Page Configuration -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>GC Checkout</title>
+        <link rel="icon" type="image/x-icon" href="../assets/logo_and_favicon/favicon.png">
+        <link rel="stylesheet" href="../style.css">
+    </head>
+    <body>
+        <!-- IA#2: CART PAGE — HEADER + NAVIGATION -->
+       <header>
+            <div class="logo">
+              <img src="../assets/logo_and_favicon/logo.png" 
+                  alt="Gem's Creations Logo" 
+                  class="logo-img">
+              <span>Gem's Creations Online Store</span>
+            </div>
+
+            <nav class="navigation"  aria-label="Main Navigation">
+              <ul>
+                <li><a href="../codes/index.html" class="active">Home</a></li>
+                <li><a href="../codes/products.html">Products</a></li>
+                <li><a href="../codes/login.html">Login</a></li>
+                <li><a href="../codes/register.html">Register</a></li>
+                <li><a href="../codes/about.html">About Us</a></li>
+              </ul>
+            </nav>
+        </header>
+
+        <!-- IA#2: CHECKOUT PAGE — MAIN CONTENT -->
+        <main>
+          <h1>Checkout</h1>
+
+          <!--ORDER SUMMARY-->
+          <section id="summary">
+            <h2>Order Summary</h2>
+            <table id="summaryTable">
+              <thead>
+                <tr>
+                  <th scope="col">Product</th>
+                  <th scope="col">Qty</th>
+                  <th scope="col">Price</th>
+                  <th scope="col">Subtotal</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="3" style="text-align:right;"><strong>Total:</strong></td>
+                  <td id="grandTotal">$0.00</td>
+                  </tr>
+              </tfoot>
+            </table>
+          </section>
+
+          <!--SHIPPING DETAILS-->
+          <section id="shipping">
+            <h2>Shipping Details</h2>
+            <form id="checkoutForm">
+                <label for="shipName">Name:<br>
+                <input type="text" id="shipName" name="shipName" required></label><br><br>
+            
+                <label for="shipAddress">Address:</label><br>
+                <textarea id="shipAddress" name="shipAddress" required></textarea><br><br>
+        
+                <label for="amountPaid">Amount Paid (US $):</label><br>
+                <input type="number" id="amountPaid" name="amountPaid" min="0" step="0.01" required><br><br>
+
+                <button type="submit" id="confirmBtn">Confirm</button>
+                <button type="button" id="cancelBtn">Cancel</button>
+            </form>
+            <!-- Confirmation Popup -->
+            <div id="confirmationPopup" class="popup">
+              <div class="popup-content">
+                <p id="popupMessage"></p>
+                <button id="closePopup">Close</button>
+              </div>
+            </div>
+          </section>
+        </main>
+        
+        <!-- IA#2: CHECKOUT PAGE — FOOTER -->
+        <footer>
+            <p>© 2025 Gem's Creations | All Rights Reserved</p>
+        </footer>
+
+        <!-- IA#2: CHECKOUT PAGE — SCRIPT -->
+        <script src="../scripts/checkout.js"></script>
+    </body>
+</html>

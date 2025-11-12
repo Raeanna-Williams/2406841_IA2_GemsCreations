@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- IA#2: Metadata and Page Configuration -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>My Cart</title>
+        <link rel="icon" type="image/x-icon" href="../assets/logo_and_favicon/favicon.png">
+        <link rel="stylesheet" href="../style.css">
+    </head>
+    <body>
+      <!-- IA#2: CART PAGE — HEADER + NAVIGATION -->
+      <header>
+        <div class="logo">
+          <img src="../assets/logo_and_favicon/logo.png" 
+               alt="Gem's Creations Logo" 
+               class="logo-img">
+          <span>Gem's Creations Online Store</span>
+        </div>
+        <nav class="navigation" aria-label="Main Navigation">
+          <ul>
+            <li><a href="../codes/index.html" class="active">Home</a></li>
+            <li><a href="../codes/products.html">Products</a></li>
+            <li><a href="../codes/login.html">Login</a></li>
+            <li><a href="../codes/register.html">Register</a></li>
+            <li><a href="../codes/about.html">About Us</a></li>
+          </ul>
+          </nav>
+      </header>
+
+      <!-- IA#2: CART PAGE — MAIN CONTENT -->
+      <main>
+        <h1>Your Shopping Cart</h1>
+
+        <table id="cartTable" border="1" cellspacing="0" cellpadding="10">
+          <thead>
+            <tr>
+              <th scope="col">Product</th>
+              <th scope="col">Price (US $)</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Subtotal (US $)</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+          <tfoot>
+            <tr>
+              <td colspan="3" style="text-align:right;"><strong>Total:</strong></td>
+              <td id="totalCell">$0.00</td>
+            </tr>
+          </tfoot>
+        </table>
+
+        <div style="margin-top:20px;">
+          <button id="clearCart">Clear All</button>
+          <button id="checkoutBtn">Check Out</button>
+          <button id="closeBtn">Close</button>
+        </div>
+      </main>
+        
+        <!-- IA#2: CART PAGE — FOOTER -->
+        <footer>
+            <p>© 2025 Gem's Creations | All Rights Reserved</p>
+        </footer>
+
+        <!-- IA#2: CART PAGE — SCRIPT -->
+        <script src="../scripts/cart.js"></script>
+    </body>
+</html>

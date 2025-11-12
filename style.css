@@ -1,0 +1,891 @@
+/* Author: Raeanna Williams 
+   ID #: 2406841 
+   Date: October 24, 2025 
+   ------------------------------------------------
+   NOTES: Single stylesheet used across all pages as required.
+   The file includes:
+   - root variables (consistent theme)
+   - page-specific sections (ABOUT, PRODUCTS, STORE, CART, CHECKOUT)
+   - responsive rules for mobile (max-width:600px) and desktop (min-width:950px)
+   - comments pointing to IA#2 rubric items (CSS selectors, layout, consistency)
+*/
+
+/* ========== GLOBAL STYLES ========== */
+/* Root Variables */
+:root 
+{
+  --bg: #FFD9DA;
+  --text: #89023E; 
+  --primary_font: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  --secondary_font: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  --border_color: #EA638C;
+  --border_radius: 15px;
+  --box_shadow: 2px 2px 5px rgba(108, 2, 39, 0.9);
+  --max-content-width: 1100px;
+  --mobile-break: 600px;
+  --desktop-break: 950px;
+}
+
+/* Body Style */
+body
+{
+  background-color: var(--bg);
+  font-family: var(--secondary_font);
+  color: var(--text);
+  text-align: center;
+  margin: 0;
+}
+
+/* Header Style */
+header
+{
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  background-color: var(--bg);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 250px;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.15);
+  border-right: 3px solid var(--border_color);
+  z-index: 100;
+}
+
+/* Navigation Links Style */
+header a
+{
+  font-size: larger;
+  text-decoration: none;
+  color: #89023E;  
+}
+
+/* Navigation Link Transition */
+header a:hover 
+{
+  color: #FFD9DA;
+  transition: 0.3s;
+  font-style: oblique;
+}
+
+/* Navigation List Style */
+header ul
+{
+  list-style-type: none;  /* Removes Bullets */
+  line-height: 45px;
+  padding: 0px;
+  margin: 30px 0;
+}
+
+/* Logo div Style */
+.logo
+{
+  background-color: var(--border_color);
+  display: flex;
+  flex-direction: column;                 /* Image appears above text */
+  align-items: center;                    /* Center aligns iimage and text */
+  justify-content: center;
+  gap: 8px;                               /* Space between image and text */
+  text-decoration: none;
+  font-size: 1.25em;
+  border-radius: var(--border_radius);
+  box-shadow: var(--box_shadow);
+  padding: 15px;
+  margin: 20px 0;
+}
+
+/* Logo Span Style */
+.logo span
+{
+  font-family: var(--primary_font);
+  line-height: 2.5rem;
+}
+/* Logo Image Style */
+.logo-img
+{
+    width: 10rem;
+    height: 10rem;
+    object-fit: contain;      /* Describes how it fits in the logo div */
+}
+
+/* Navigation Section Style */
+.navigation
+{
+  background-color: #ed7e96;
+  width: 100%;
+  height: 100vh;
+  font-size: 1.2em;
+  padding-top: 30px;
+  margin-top: -10px;
+  border-radius: 10px;
+  box-shadow: var(--box_shadow);
+  position: static;
+}
+
+main 
+{
+  margin-left: 250px;
+  padding: 30px;
+  text-align: center;
+}
+
+footer
+{
+  border-top: 2px solid #89023E;
+  padding: 10px;
+  color: #89023E;
+  text-align: center;
+  justify-content: center;
+}
+
+/* ========== HOME PAGE ========== */
+/* Adds space between the welcome message & featured products section */
+.products
+{
+    padding-top: 45px;
+}
+
+/* Product Grid Style */
+.product-grid
+{
+  background-color: #fdf7f7;
+  width: 800px;
+  margin: 50px auto;
+  border-radius: var(--border_radius);
+  box-shadow: var(--box_shadow);
+  padding: 35px;
+  display: flex;                /* places image + text in one row */
+  align-items: center;          /* vertically centers them */
+  justify-content: center;
+  gap: 40px;                    /* spacing between logo image and text */
+  text-decoration: none;
+}
+
+/* Product Image Style */
+.product > img
+{
+  width: 150px;
+  height: 150px;
+  object-fit: fill;
+  border-radius: var(--border_radius);
+  box-shadow: var(--box_shadow)
+}
+
+.product img:hover
+{
+  width: 170px;
+  height: 170px;
+  box-shadow: 3px 3px 6px #EA638C;
+  transition: 0.3s;
+}
+
+/* ========== PRODUCTS PAGE ========== */
+/* Heading 2 Style */
+h2
+{
+  background-color: #EA638C;
+  text-shadow: 1px 2px 2px #fdf7f7;
+  padding: 10px;
+  border: 2px solid #fdf7f7;
+  border-radius: var(--border_radius);
+  box-shadow: 2px 2px 5px rgba(108, 2, 39, 0.9);
+}
+
+.product-list
+{
+  font-family: var(--primary_font);
+  list-style-type: armenian;
+  line-height: 35px;
+  padding: 0px;
+  margin: 10px 0;
+}
+
+.product-list a:hover
+{
+  color: #FFD9DA;
+  transition: 0.3s;
+  font-style: normal;
+}
+
+/* Heading 2 Transition */
+h2:hover
+{
+  font-size: xx-large;
+  transition: 0.3s;
+}
+
+/* Product Grid Style */
+.prod-grid
+{
+  background-color: #fdf7f7;
+  width: 700px;
+  margin: 50px auto;
+  border-radius: var(--border_radius);
+  box-shadow: var(--box_shadow);
+  padding: 30px;
+  display: flex;                /* places image + text in one row */
+  align-items: center;          /* vertically centers them */
+  justify-content: center;
+  gap: 40px;                    /* spacing between logo image and text */
+  flex-wrap: wrap;
+  text-decoration: none;
+}
+
+/* Product Image Style */
+.prod_img
+{
+  width: 150px;
+  height: 150px;
+  object-fit: fill;
+  border-radius: var(--border_radius);
+  box-shadow: var(--box_shadow)
+}
+
+/* Add to Cart Button Style */
+.btn-add
+{
+  background-color: var(--border_color);
+  font-family: var(--secondary_font);
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: var(--border_radius);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Add to Cart Button Transition */
+.btn-add:hover
+{
+    color:rgba(108, 2, 39, 0.9);
+    font-size: medium;
+    border-color: #89023E;
+}
+
+/* ========== CART PAGE ========== */
+/* ===== BUTTON STYLING ===== */
+button 
+{
+  background-color: var(--border_color);
+  color: white;
+  font-family: var(--secondary_font);
+  font-size: 1.05rem;
+  font-weight: bold;
+  border: none;
+  border-radius: var(--border_radius);
+  padding: 10px 18px;
+  margin: 8px;
+  cursor: pointer;
+  box-shadow: 2px 2px 5px rgba(137, 2, 62, 0.3);
+  transition: all 0.3s ease;
+}
+
+button:hover 
+{
+  background-color: var(--text);
+  transform: translateY(-3px);
+  box-shadow: 3px 3px 8px rgba(137, 2, 62, 0.5);
+}
+
+button:active 
+{
+  transform: translateY(0);
+  box-shadow: inset 2px 2px 5px rgba(137, 2, 62, 0.4);
+}
+
+/* Style for important actions like "Checkout" or "Confirm" */
+#checkoutBtn, 
+#confirmBtn 
+{
+  background-color: #a10d4b;
+  color: #fff;
+}
+
+#checkoutBtn:hover, 
+#confirmBtn:hover 
+{
+
+  background-color: #89023E;
+}
+
+/* Style for "Clear All" or "Cancel" */
+#clearCart, 
+#cancelBtn 
+{
+  background-color: #f5b5c4;
+  color: #89023E;
+  border: 2px solid #89023E;
+}
+
+#clearCart:hover, 
+#cancelBtn:hover 
+{
+  background-color: #89023E;
+  color: #FFD9DA;
+}
+
+/* ===== TABLE STYLING (Cart/Checkout Summary) ===== */
+table 
+{
+  border-collapse: collapse;
+  width: 80%;
+  margin: 20px auto;
+  background-color: #fff;
+  border-radius: var(--border_radius);
+  box-shadow: var(--box_shadow);
+}
+
+th, td 
+{
+  padding: 12px;
+  border-bottom: 1px solid #f0a9b6;
+}
+
+th 
+{
+  background-color: #ed7e96;
+  color: white;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+}
+
+tr:hover 
+{
+  background-color: #ffe8ec;
+}
+
+/* ===== FORM STYLING (Checkout / Register Inputs) ===== */
+form input, 
+form textarea 
+{
+  width: 80%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 2px solid var(--border_color);
+  border-radius: var(--border_radius);
+  font-family: var(--secondary_font);
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+form input:focus, 
+form textarea:focus 
+{
+  border-color: var(--text);
+  box-shadow: 0 0 6px rgba(137, 2, 62, 0.3);
+}
+
+form label 
+{
+  font-weight: bold;
+  color: var(--text);
+  display: block;
+  margin-top: 10px;
+}
+
+/* ===== TOTAL CELL HIGHLIGHT ===== */
+#totalCell, 
+#grandTotal 
+{
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: var(--text);
+}
+
+/* ===== HEADINGS ===== */
+h1, h2 
+{
+  color: var(--text);
+  font-family: var(--primary_font);
+  text-shadow: 1px 1px 2px rgba(137, 2, 62, 0.3);
+}
+
+/* ===== Message Box Styles (Login/Register feedback) ===== */
+.message-box 
+{
+  margin-top: 20px;
+  padding: 12px;
+  border-radius: 10px;
+  font-family: var(--secondary_font);
+  font-size: 1rem;
+  text-align: center;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+/* Success Message */
+.message-box.success 
+{
+  background-color: #f7b6c4;
+  color: #EA638C;
+  border: 2px solid #721c24;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Error Message */
+.message-box.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 2px solid #EA638C;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+ 
+/* ========== CHECKOUT PAGE ========== */
+/* Section Headings Style*/
+h1, h2 
+{
+  color: var(--text);
+  font-family: var(--primary_font);
+  text-shadow: 1px 1px 3px rgba(137, 2, 62, 0.2);
+  letter-spacing: 1px;
+}
+
+/* Order Summary Table Style */
+table 
+{
+  border-collapse: collapse;
+  width: 80%;
+  margin: 25px auto;
+  background-color: #fff;
+  border-radius: var(--border_radius);
+  box-shadow: var(--box_shadow);
+  overflow: hidden;
+}
+
+th, td 
+{
+  padding: 12px;
+  border-bottom: 1px solid #f7b6c4;
+}
+
+th 
+{
+  background-color: #ed7e96;
+  color: white;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+}
+
+tr:hover 
+{
+  background-color: #ffe8ec;
+}
+
+#grandTotal 
+{
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: var(--text);
+}
+
+/* Shipping Form Style */
+#checkoutForm 
+{
+  margin-top: 30px;
+  background-color: #fff;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 25px;
+  border-radius: var(--border_radius);
+  box-shadow: var(--box_shadow);
+}
+
+#checkoutForm label 
+{
+  display: block;
+  text-align: left;
+  font-weight: bold;
+  color: var(--text);
+  margin-top: 15px;
+  font-size: 1rem;
+}
+
+#checkoutForm input, 
+#checkoutForm textarea 
+{
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 2px solid var(--border_color);
+  border-radius: var(--border_radius);
+  font-family: var(--secondary_font);
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+#checkoutForm input:focus, 
+#checkoutForm textarea:focus 
+{
+  border-color: var(--text);
+  box-shadow: 0 0 8px rgba(137, 2, 62, 0.3);
+}
+
+/* Button Style */
+button 
+{
+  background-color: var(--border_color);
+  color: white;
+  font-family: var(--secondary_font);
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: var(--border_radius);
+  padding: 10px 18px;
+  margin: 10px 8px;
+  cursor: pointer;
+  box-shadow: 2px 2px 5px rgba(137, 2, 62, 0.3);
+  transition: all 0.3s ease;
+}
+
+/* General Hover Style */
+button:hover 
+{
+  background-color: var(--text);
+  transform: translateY(-3px);
+  box-shadow: 3px 3px 8px rgba(137, 2, 62, 0.5);
+}
+
+button:active 
+{
+  transform: translateY(0);
+  box-shadow: inset 2px 2px 5px rgba(137, 2, 62, 0.4);
+}
+
+/* Checkout & Confirm Button Style */
+#confirmBtn 
+{
+  background-color: #a10d4b;
+  color: #fff;
+}
+
+#confirmBtn:hover 
+{
+  background-color: var(--text);
+}
+
+/* Cancel Button Style*/
+#cancelBtn 
+{
+  background-color: #f5b5c4;
+  color: var(--text);
+  border: 2px solid var(--text);
+}
+
+#cancelBtn:hover 
+{
+  background-color: var(--text);
+  color: #FFD9DA;
+}
+
+/* Confirmation Popup Styling */
+.popup 
+{
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content 
+{
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  max-width: 350px;
+  width: 90%;
+}
+
+.popup-content p 
+{
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.popup-content button 
+{
+  background-color: var(--text);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.popup-content button:hover 
+{
+  background-color: #a42a5a;
+}
+
+/* ========== LOGIN PAGE ========== */
+/* Form Container Style */
+.form-container 
+{
+  background-color: #fff;
+  width: 400px;
+  margin: 50px auto;
+  padding: 30px;
+  border-radius: var(--border_radius);
+  box-shadow: var(--box_shadow);
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  color: var(--text);
+}
+
+/* Form Label Style */
+.form-container label 
+{
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* Form Input Style */
+.form-container input 
+{
+  padding: 10px;
+  border: 2px solid var(--border_color);
+  border-radius: var(--border_radius);
+  margin-top: 5px;
+  font-size: 1rem;
+}
+
+/* Changes the outline of the text bubble when a customer is entering data to match color scheme*/
+.form-container input:focus 
+{
+  outline: none;
+  border-color: var(--text);
+}
+
+/* Login Button Style */
+.btn-login 
+{
+  background-color: var(--border_color);
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: var(--border_radius);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+/* Login Button Transition */
+.btn-login:hover 
+{
+  cursor: pointer;        /* Changers cursor type*/
+  transition: 0.3s;
+  background-color: var(--text);
+}
+
+/* Link to Registration Style */
+a
+{
+    text-decoration: underline;
+    color: #EA638C;
+}
+
+/* Link to Registration Transition */
+a:hover
+{
+    color: #ed7e96;
+    text-decoration: wavy;
+    font-size: large;
+}
+
+/* ========== REGISTER PAGE ========== */
+/* Form Container Style */
+.form-container 
+{
+  background-color: #fff;
+  width: 400px;
+  margin: 50px auto;
+  padding: 30px;
+  border-radius: var(--border_radius);
+  box-shadow: var(--box_shadow);
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  color: var(--text);
+}
+
+/* Form Label Style */
+.form-container label 
+{
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* Form Input Style */
+.form-container input 
+{
+  padding: 10px;
+  border: 2px solid var(--border_color);
+  border-radius: var(--border_radius);
+  margin-top: 5px;
+  font-size: 1rem;
+}
+
+/* Changes the outline of the text bubble when a customer is entering data to match color scheme*/
+.form-container input:focus 
+{
+  outline: none;
+  border-color: var(--text);
+}
+
+/* Register Button Style */
+.btn-register 
+{
+  background-color: var(--border_color);
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: var(--border_radius);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+/* Register Button Transition */
+.btn-register:hover 
+{
+  cursor: pointer;
+  transition: 0.3s;
+  background-color: var(--text);
+}
+
+/* ========== ABOUT PAGE ========== */
+/* About Gem's Creations Section Style */
+.about-section 
+{
+  max-width: 800px;
+  margin: 30px auto;
+  background-color: #ed7e96;
+  padding: 25px;
+  border-radius: var(--border_radius);
+  box-shadow: var(--box_shadow);
+  text-align: left;
+}
+
+/* About Gem's Creations Heading 2 Text Style */
+.about-section h2 
+{
+  color: var(--text);
+  margin-top: 20px;
+}
+
+/* About Gem's Creations Paragraph Text Style */
+.about-section p 
+{
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+/* About the Owner Section Style */
+.owner-info 
+{
+  max-width: 600px;
+  margin: 40px auto;
+  background-color: #fbe8ed;
+  padding: 20px;
+  border-radius: var(--border_radius);
+  box-shadow: var(--box_shadow);
+  align-items: center;
+}
+
+/* About the Owner Pre Text Style */
+.owner-info pre
+{
+  font-family: var(--secondary_font);
+  text-align: left;
+  white-space: pre-wrap;
+}
+
+/* About the Owner Link Style */
+.owner-info a 
+{
+  color: var(--text);
+  text-decoration: underline;
+}
+
+/* About the Owner Image Style */
+.owner_img 
+{
+  width: 250px;
+  height: 250px;
+  border: 10px solid #EA638C; 
+  border-radius: 100%;        /* makes it perfectly circular */
+  box-shadow: 0 0 10px #89023E; 
+  object-fit: cover;          /* keeps image proportions inside circle */
+}
+/* ========== RESPONSIVE DESIGN ========== */
+/* Desktop Screens */
+@media screen and (min-width: 950px) 
+{
+    main { padding: 48px; }
+  .prod-grid, .product-grid { max-width: 1100px; gap: 28px; }
+  .product { width: 220px; }
+  .logo-img { width: 11rem; height: 11rem; }
+}
+
+/* Mobile Screens */
+@media screen and (max-width: 600px) 
+{
+  /* Layout & Positioning - switch sidebar to top header for mobile */
+  header 
+  {
+    position: static;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    box-shadow: none;
+    border-right: none;
+    border-bottom: 3px solid var(--border_color);
+  }
+
+  .logo { flex-direction: row; gap: 12px; align-items: center; padding: 8px; margin: 8px; }
+  .logo-img { width: 60px; height: 60px; }
+  .logo span { font-size: 1rem; }
+
+  .navigation { width: 100%; padding: 8px 6px; box-shadow:none; background-color: #ed7e96; }
+  header ul { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; margin: 6px 0; line-height: normal; }
+
+  /* Main uses full width on mobile */
+  main { margin-left: 0; padding: 16px; text-align: left; }
+
+  /* Product grid stacks card vertically and makes cards readable on small screens */
+  .prod-grid, .product-grid { width: 100%; padding: 12px; gap: 10px; }
+  .product { width: calc(50% - 16px); margin:8px auto; }
+
+  /* On very narrow phones, make products full width */
+  @media (max-width: 420px) 
+  {
+    .product { width: 100%; }
+  }
+
+  .prod_img, .product > img { width: 120px; height: 120px; }
+
+  /* Owner info stacks column */
+  .owner-info { flex-direction: column; align-items: center; text-align: center; }
+  .owner-info img { width: 140px; height: 140px; margin-bottom: 12px; }
+
+  /* Buttons full width */
+  .btn-add { width: 100%; }
+}
